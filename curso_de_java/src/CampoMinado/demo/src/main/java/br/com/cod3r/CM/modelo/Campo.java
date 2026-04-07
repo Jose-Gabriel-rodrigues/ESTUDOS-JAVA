@@ -7,17 +7,16 @@ import br.com.cod3r.CM.excecao.ExplosaoException;
 
 public class Campo {
 
-
 	private final int linha;
 	private final int coluna;
-	
+
 	private boolean aberto = false;
 	private boolean minado = false;
 	private boolean marcado = false;
 	
 	private List<Campo> vizinhos = new ArrayList<>();
 	
-	Campo(int linha, int coluna) {
+	Campo(int linha, int coluna) { // vai mexe na parte de linha e coluna
 		this.linha = linha;
 		this.coluna = coluna;
 	}
