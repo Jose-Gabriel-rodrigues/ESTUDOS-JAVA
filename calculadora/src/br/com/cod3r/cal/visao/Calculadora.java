@@ -6,24 +6,32 @@ import javax.swing.JFrame;
 @SuppressWarnings("serial")
 public class Calculadora extends JFrame{
 	public Calculadora() {
+		
 		organizarLayout();
-		setSize(232, 322);//dimensao da calculadora
-		setDefaultCloseOperation(EXIT_ON_CLOSE);// vai deixa fecha o calculadora//
-		setLocationRelativeTo(null);// so vai ajudar a abrir no meio da tela //
+		
+		setSize(232, 322);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 	
-	public void organizarLayout() {
-		setLayout(new BorderLayout());
-		Deplay deplay = new Deplay();
-		deplay.setPreferredSize(new Dimension(233,60));// aqui to meio de dividindo a tela da calculadora da partes de numero  e a de sresultador 
-		add(deplay,BorderLayout.NORTH);// parte de cima  da calculadora 
-		Teclado teclado = new Teclado();
-		add(teclado, BorderLayout.CENTER);// parte de baixo da calculadora 
-	}
 	
+	
+	private void organizarLayout() {
+		setLayout(new BorderLayout());
+		
+		Display display = new Display();
+		display.setPreferredSize(new Dimension(233, 60));
+		add(display, BorderLayout.NORTH);
+		
+		Teclado teclado = new Teclado();
+		add(teclado, BorderLayout.CENTER);
+		
+	}
+
+
+
 	public static void main(String[] args) {
-		new Calculadora() {
-		};
+		new Calculadora();
 	}
 }
